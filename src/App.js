@@ -1,12 +1,16 @@
-import React from 'react'
+import { Main } from './Main';
+import { Footer } from './Footer';
+import { Header } from './Header';
+import React from "react";
 
 const App = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
-  )
-}
+    <>
+      <Header     />
+      <Main     />
+      <Footer     />
+    </>
+  );
+};
 
-export default App
-<h1>
+export default App;

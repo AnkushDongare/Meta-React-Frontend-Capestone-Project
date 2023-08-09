@@ -1,5 +1,5 @@
 import React from "react";
-export function Testimonials({}) {
+export default function Testimonials() {
   return <section className="testimonials">
         <h2>Testimonials</h2>
         <div>

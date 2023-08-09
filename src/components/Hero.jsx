@@ -1,5 +1,5 @@
 import React from "react";
-export function Hero({}) {
+export default function Hero() {
   return <section className="hero">
         <div>
         <h1>Little Lemon</h1>

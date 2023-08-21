@@ -1,59 +1,59 @@
-import React from "react";
-export default function Footer() {
-  return (
-    <footer>
-      <img src="" alt="" />
-      <div>
-        <h3>Doormat Navigation</h3>
-        <ul>
-          <li>
-            <p>Home</p>
-          </li>
-          <li>
-            <p>About</p>
-          </li>
-          <li>
-            <p>Menu</p>
-          </li>
-          <li>
-            <p>Reservation</p>
-          </li>
-          <li>
-            <p>Order Online</p>
-          </li>
-          <li>
-            <p>Login</p>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <ul>
-          <li>
-            <p>Address</p>
-          </li>
-          <li>
-            <p>Phone</p>
-          </li>
-          <li>
-            <p>Email</p>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>Social Media Links</h3>
-        <ul>
-          <li>
-            <p>Address</p>
-          </li>
-          <li>
-            <p>Phone</p>
-          </li>
-          <li>
-            <p>Email</p>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  );
+export default function Footer({
+  footerLogo
+}) {
+  return <footer>
+        <img src={footerLogo} alt="" width={162} height={279} />
+        <div>
+          <h3>Doormat Navigation</h3>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+            <a href="/">About</a>
+            </li>
+            <li>
+            <a href="/">Menu</a>
+            </li>
+            <li>
+            <a href="/">Reservation</a>
+            </li>
+            <li>
+            <a href="/">Order Online</a>
+            </li>
+            <li>
+            <a href="/">Login</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>
+            <a href="/">Address</a>
+            </li>
+            <li>
+            <a href="/">Phone</a>
+            </li>
+            <li>
+            <a href="/">Email</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Social Media Links</h3>
+          <ul>
+            <li>
+            <a href="/">Address</a>
+            </li>
+            <li>
+            <a href="/">Phone</a>
+            </li>
+            <li>
+            <a href="/">Email</a>
+            </li>
+          </ul>
+        </div>
+      </footer>;
 }
+  

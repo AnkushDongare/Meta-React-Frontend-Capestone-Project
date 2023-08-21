@@ -1,13 +1,337 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  display: grid;
+  grid-template-rows: 123px auto 500px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+header nav ul {
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+header nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-family: Karla;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 430px 718px 500px 500px;
+}
+
+.hero {
+  background: #495e57;
+  display: grid;
+  grid-template-columns: 349px 399px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.hero h1 {
+  color: #f4ce14;
+  font-family: Roboto;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.hero h2 {
+  color: #edefee;
+  font-family: "Markazi Text", serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.hero p {
+  color: #edefee;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140.625%; /* 28.125px */
+  margin: 15px 0 72px 0;
+}
+
+.hero a {
+  color: #333;
+  background: #f4ce14;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  padding: 19px 25px;
+  border-radius: 15px;
+}
+
+.hero img {
+  position: relative;
+  width: 375px;
+  height: 447px;
+  border-radius: 30px;
+  top: 23px;
+}
+
+.highlights-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.highlights-heading h2 {
+  color: #000;
+  font-family: Karla;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 259px;
+}
+
+.highlights-heading a {
+  color: #fff;
+  background: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  padding: 19px 25px;
+  border-radius: 15px;
+}
+
+.highlights-products {
+  display: grid;
+  grid-template-columns: repeat(3, 265px);
+  grid-column-gap: 20px;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.highlights-products article div {
+  margin: 15px;
+}
+.highlights-products article div div {
+  display: flex;
+  justify-content: space-between;
+}
+.highlights-products article div div h3 {
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+
+  /* Card_title */
+  font-family: Markazi Text;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 21.6px */
+}
+.highlights-products article div div p {
+  color: #ee9972;
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.highlights-products article {
+  background-color: #edefee;
+  border-radius: 16px 16px 0px 0px;
+}
+.highlights-products article img {
+  border-radius: 16px 16px 0px 0px;
+  border: 1px solid #000;
+  margin-bottom: 19.23px;
+}
+.highlights-products a {
+  color: #333;
+
+  /* Nav_Link */
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.highlights-products div p {
+  color: #495e57;
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.testimonials {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background: #d9d9d9;
+}
+.testimonials h2 {
+  color: #333;
+  font-family: "Markazi Text", serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 66px;
+}
+.testimonials article img {
+  border-radius: 50%;
+}
+.testimonials div {
+  display: flex;
+  justify-content: center;
+  color: #f4ce14;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.testimonials div {
+  margin-bottom: 13px;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.testimonials article {
+  background: #fff;
+  padding: 25px;
+  width: 234px;
+}
+.testimonials article h3 {
+  color: #495e57;
+}
+.testimonials article p {
+  color: #495e57;
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.about img {
+  position: relative;
+}
+
+.about img:nth-child(1) {
+  top: 107px;
+  left: 175px;
+  z-index: 1;
+}
+
+.about img:nth-child(2) {
+  bottom: 107px;
+}
+.about h2 {
+  color: #000;
+
+  /* Display_serif */
+  font-family: Markazi Text;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.about p:nth-child(1) {
+  color: #333;
+
+  /* Subheading */
+  font-family: Markazi Text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+.about p:nth-child(2) {
+  color: #000;
+  text-align: justify;
+  font-family: Karla;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #d9d9d9;
+  display: grid;
+  grid-template-columns: 162px repeat(3, 210px);
+  align-content: center;
+  justify-content: center;
+  gap: 20px;
+}
+footer ul {
+  list-style: none;
+}
+footer ul a {
+  color: #333;
+  font-family: Karla;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  text-decoration: none;
+}
+footer h3 {
+  color: #495e57;
+  font-family: Karla;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
 }

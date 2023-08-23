@@ -1,32 +1,62 @@
-import React, { useState, useReducer } from 'react';
-import BookingForm from '../components/BookingForm';
-
-export const initializeTimes = () => ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+import React, { useReducer } from "react";
+import BookingForm from "../components/BookingForm";
+import {
+  fetchAPI,
+  submitAPI,
+} from "https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api";
+import { useNavigate } from "react-router-dom";
 
 const BookingPage = () => {
-    const [selectedDate, setSelectedDate] = useState('');
-    
-    const updateTimes = (selectedDate) => {
-        // You can implement logic here to update availableTimes based on the selectedDate.
-        // For now, let's keep it simple and use the initializeTimes function.
-        return initializeTimes();
-    };
+  const [availableTimes, dispatchAvailableTimes] = useReducer(
+    (state, action) => {
+      return state;
+    },
+    ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
+  );
 
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const updateTimes = async (selectedDate) => {
+    try {
+      const availableTimes = await fetchAPI(selectedDate);
+      dispatchAvailableTimes(availableTimes);
+    } catch (error) {
+      console.error("Error fetching available times:", error);
+    }
+  };
 
-    const handleDateChange = (event) => {
-        const newDate = event.target.value;
-        setSelectedDate(newDate);
-        const newTimes = updateTimes(newDate);
-        dispatch(newTimes);
-    };
+  const initializeTimes = async () => {
+    try {
+      const today = new Date();
+      const availableTimes = await fetchAPI(today);
+      dispatchAvailableTimes(availableTimes);
+    } catch (error) {
+      console.error("Error fetching available times:", error);
+    }
+  };
 
-    return (
-        <div>
-            <h1>Table Booking App</h1>
-            <BookingForm selectedDate={selectedDate} availableTimes={availableTimes} onDateChange={handleDateChange} />
-        </div>
-    );
-}
+  const navigate = useNavigate();
+
+  const submitForm = async (formData) => {
+    try {
+      const isSubmitted = await submitAPI(formData);
+      if (isSubmitted) {
+        navigate("/confirmed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Booking Page</h2>
+      <BookingForm
+        availableTimes={availableTimes}
+        updateTimes={updateTimes}
+        initializeTimes={initializeTimes}
+        submitForm={submitForm}
+      />
+    </div>
+  );
+};
 
 export default BookingPage;

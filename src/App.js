@@ -11,7 +11,7 @@ import img1 from "./assets/Mario and Adrian A.jpg";
 import img2 from "./assets/Mario and Adrian b.jpg";
 import basket from "./assets/Basket.svg";
 import BookingPage from "./pages/BookingPage";
-
+import ConfirmedBooking from './pages/ConfirmedBooking.jsx'
 const App = () => {
   return (
     <BrowserRouter>
@@ -31,6 +31,7 @@ const App = () => {
           }
         />
         <Route path="/booking" element={<BookingPage/>} />
+        <Route path="/confirmed" element={<ConfirmedBooking/>} />
       </Routes>
       <Footer footerLogo={footerLogo} />
     </BrowserRouter>

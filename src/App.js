@@ -7,11 +7,13 @@ import footerLogo from "./assets/Logo.svg";
 import HomePage from "./pages/HomePage";
 import heroImage from "./assets/restauranfood.jpg";
 import greekSalad from "./assets/greek salad.jpg";
+import bruchetta from "./assets/bruchetta.svg";
+import lemonDessert from "./assets/lemon dessert.jpg";
 import img1 from "./assets/Mario and Adrian A.jpg";
 import img2 from "./assets/Mario and Adrian b.jpg";
 import basket from "./assets/Basket.svg";
 import BookingPage from "./pages/BookingPage";
-import ConfirmedBooking from './pages/ConfirmedBooking.jsx'
+import ConfirmedBooking from "./pages/ConfirmedBooking.jsx";
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,14 +26,16 @@ const App = () => {
             <HomePage
               heroImage={heroImage}
               greekSalad={greekSalad}
+              bruchetta={bruchetta}
+              lemonDessert={lemonDessert}
               basket={basket}
               img1={img1}
               img2={img2}
             />
           }
         />
-        <Route path="/booking" element={<BookingPage/>} />
-        <Route path="/confirmed" element={<ConfirmedBooking/>} />
+        <Route path="/booking" element={<BookingPage />} />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
       <Footer footerLogo={footerLogo} />
     </BrowserRouter>

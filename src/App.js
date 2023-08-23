@@ -1,30 +1,39 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import About from "./components/About";
-import Testimonials from "./components/Testimonials";
-import Highlights from "./components/Highlights";
-import Hero from "./components/Hero";
 import Header from "./components/Header";
 import React from "react";
 import logo from "./assets/Logo.svg";
+import footerLogo from "./assets/Logo.svg";
+import HomePage from "./pages/HomePage";
 import heroImage from "./assets/restauranfood.jpg";
 import greekSalad from "./assets/greek salad.jpg";
 import img1 from "./assets/Mario and Adrian A.jpg";
 import img2 from "./assets/Mario and Adrian b.jpg";
 import basket from "./assets/Basket.svg";
-import footerLogo from "./assets/Logo.svg";
+import BookingPage from "./pages/BookingPage";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header logo={logo} />
-      <main>
-        <Hero heroImage={heroImage} />
-        <Highlights greekSalad={greekSalad} />
-        <Testimonials basket={basket} />
-        <About img1={img1} img2={img2} />
-      </main>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <HomePage
+              heroImage={heroImage}
+              greekSalad={greekSalad}
+              basket={basket}
+              img1={img1}
+              img2={img2}
+            />
+          }
+        />
+        <Route path="/booking" element={<BookingPage/>} />
+      </Routes>
       <Footer footerLogo={footerLogo} />
-    </>
+    </BrowserRouter>
   );
 };
 
